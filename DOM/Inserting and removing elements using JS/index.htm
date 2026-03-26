@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container red bg-green">
+        <div class="box " style="display: flex;">Hey I am a box</div>
+        <div class="box">Hey I am a box</div>
+    </div>
+    <script>console.log(document.querySelector(".box"))
+        // console.log(document.querySelector(".box").innerHTML)
+        // console.log(document.querySelector(".container").innerText)
+        // console.log(document.querySelector(".container").outerText)
+        // console.log(document.querySelector(".container").tagName)
+        // console.log(document.querySelector(".container").nodeName)
+
+        // Difference btw tag name and node name is that the tagneame contain only elements while node name contain text node ,comment node etc
+
+        // console.log(document.querySelector(".container").hidden = true)
+        // it hide that 
+
+        // we can also change the content using innter HTML
+
+        // console.log(document.querySelector(".box").innerHTML = "Hey I am Emaan")
+
+        // to check that this attribute is exsist in it or not.
+        // console.log(document.querySelector(".box").hasAttribute("style"))
+
+        // and if we want to get attribute 
+        // console.log(document.querySelector(".box").getAttribute("style"))
+
+        // if we want to get  all attributes
+        // console.log(document.querySelector(".box").attributes)
+
+        // to remove attribute
+        // console.log(document.querySelector(".box").remove("style"))
+
+        let div = document.createElement("div")
+        div.innerHTML = "I have been created by <b>Emaan </b>"
+        // document.querySelector(".container").append(div)
+
+        // if we want to add that before that element so we use .before
+        document.querySelector(".container").before(div)
+
+        // agr sab sa pehla insert krna h tu prepend and if want to add at the last then after 
+
+        // inset adjacent element,html
+        let cont = document.querySelector(".container")
+        // cont.insertAdjacentHTML("afterend", "<b>hey i am so happy but this is not the reality check </b>")
+        cont.insertAdjacentHTML("afterbegin", "<b>hey i am so happy but this is not the reality check </b>")
+        // cont.insertAdjacentHTML("beforebegin", "<b>hey i am so happy but this is not the reality check </b>")
+
+        // way of removing node
+        console.log(document.querySelector(".box").remove())
+        // it remove the first element whoes class is box
+        console.log(document.querySelector(".box").remove())
+        // and it remove the second one
+
+    // get class list
+    console.log(document.querySelector(".container").classList)
+    console.log(document.querySelector(".container").className)
+
+    // adding or removing classes through Js
+    console.log(document.querySelector(".container").classList.add("bg-black"))
+   console.log(document.querySelector(".container").classList.remove("bg-black"))
+   console.log(document.querySelector(".container").classList.remove("red"))
+
+
+
+    </script>
+</body>
+
+</html>
+<!-- 1. document.querySelector(".box")
+javascript// Output:
+<div class="box">Hey I am a box</div>
+Returns the entire HTML element itself — the actual DOM node/object. You can use it to manipulate the element further (change style, add events, etc.)
+
+2. document.querySelector(".box").innerHTML
+javascript// Output:
+Hey I am a box
+Returns only the HTML content inside the element as a string. If there were nested tags inside, it would include them:
+html<!-- if box was this: -->
+<!-- <div class="box">Hey <b>I am</b> a box</div> -->
+
+<!-- innerHTML would give: -->
+<!-- "Hey <b>I am</b> a box"   // includes the HTML tags
+
+3. document.querySelector(".container").innerText
+javascript// Output:
+Hey I am a box
+Hey I am a box
+Returns the visible text content of the element and all its children — but no HTML tags, just plain text as it appears on screen.
+
+4. document.querySelector(".container").outerText
+javascript// Output:
+Hey I am a box
+Hey I am a box
+In most cases gives the same result as innerText. The difference is:
+
+innerText → text inside the element
+outerText → text including the element itself (but since divs have no extra text of their own, output looks the same here) -->
+
+<!-- MOST IMP THING
+ we can update ,change any page just after running this command 
+ document.designmode ="on"
+ 
+
+
+
+-->
