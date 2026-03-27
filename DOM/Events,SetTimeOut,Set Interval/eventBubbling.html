@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .child {
+            background-color: antiquewhite;
+            border: 2px solid black;
+            margin: 24px;
+            padding: 24px;
+            cursor: pointer;
+        }
+
+        .childContainer {
+            background-color: bisque;
+            padding: 24px;
+            margin: 24px;
+
+        }
+
+        .container {
+            background-color: brown;
+            padding: 24px;
+            margin: 24px;
+
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <section class="childContainer">
+            <div class="child">I am a child</div>
+        </section>
+    </div>
+    <script>
+        let child = document.querySelector(".child")
+        child.addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("child was clicked")
+        })
+        let childContainer = document.querySelector(".childContainer")
+        childContainer.addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("childContainer was clicked")
+        })
+        let Container = document.querySelector(".container")
+        Container.addEventListener("click", () => {
+            alert("Container was clicked")
+        })
+        // when we click on i am a child then all of these three alert is shown bcz it is like if someone ask you live in FSD,you live in punjab,you live in Pakistan do you understand 
+        // means if the child was clicked obvisouly it is inside his parent so that also clicked.
+
+        function getRandomColor() {
+            // actually the formula is a+r(b-a) where r is the number btw 0  and 1 and .ceil convert the decimal digit into integer
+            let val1 = Math.ceil(0 + Math.random() * 255)
+            let val2 = Math.ceil(0 + Math.random() * 255)
+            let val3 = Math.ceil(0 + Math.random() * 255)
+            return `rgb(${val1},${val2},${val3})`
+        }
+
+
+        // Set Interval
+        //    let a= setInterval(() => {
+        //         document.querySelector(".child").style.color=getRandomColor()
+        //     }, 1000);
+        //     console.log(a)
+        // Set Interval
+        // clear interval to stop the set interval
+
+        let a = setTimeout(() => {
+            document.querySelector(".child").style.color = getRandomColor()
+        }, 1000);
+        console.log(a)
+        // to cancel set time out use clearsetTimeout(1)
+        // setTimeout → runs once after a delay
+        // setInterval → runs repeatedly every X milliseconds
+
+    </script>
 </body>
+
 </html>
