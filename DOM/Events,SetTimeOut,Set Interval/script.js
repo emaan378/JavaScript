@@ -6,3 +6,7 @@ button.addEventListener("dblclick",()=>{
 button.addEventListener("contextmenu",()=>{
    alert("Dont hack us by right Click Please")
 })
+// Event delegation
+// So Event Delegation = putting ONE listener on the parent instead of many listeners on each child!
+//  It works because of event bubbling — event travels up from child to parent automatically
+
